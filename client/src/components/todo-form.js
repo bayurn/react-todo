@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class NameForm extends Component {
+class todoForm extends Component {
     constructor(props) {
         super(props);
         this.state = { title: '' };
@@ -29,3 +29,5 @@ class NameForm extends Component {
         );
     }
 }
+
+export default todoForm;
