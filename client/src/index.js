@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import todoBox from './components/todo-box';
+import TodoBox from './components/todoBox';
 import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <todoBox />
+    <TodoBox />
   </React.StrictMode>,
   document.getElementById('root')
 );

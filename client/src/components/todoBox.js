@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import todoList from './todo-list';
-import todoForm from './todo-form';
+import TodoList from './todoList';
+import TodoForm from './todoForm';
 
-class todoBox extends Component {
+class TodoBox extends Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
@@ -15,11 +15,11 @@ class todoBox extends Component {
         return (
             <div>
                 <h1>Daftar Kerjaan</h1>
-                <todoList data={this.state.data} />
-                <todoForm />
+                <TodoList data={this.state.data} />
+                <TodoForm />
             </div>
         );
     }
 }
 
-export default todoBox;
+export default TodoBox;
