@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TodoList from './todoList';
 import TodoForm from './todoForm';
 
-class TodoBox extends Component {
+export default class TodoBox extends Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
@@ -12,8 +12,16 @@ class TodoBox extends Component {
     }
 
     addTodo(title) {
-        this.setState((state, props) => ({
-            data: [...state.data, { title, complete: false }]
+        this.setState((state) => ({
+            data: [...state.data, { id: Date.now().toString(), title, complete: false }]
+        }))
+    }
+
+    completeTodo(id) {
+        this.setState((state) => ({
+            data: state.data.map(item => {
+                item.id === id
+            })
         }))
     }
 
@@ -22,10 +30,8 @@ class TodoBox extends Component {
             <div>
                 <h1>Daftar Kerjaan</h1>
                 <TodoList data={this.state.data} />
-                <TodoForm add={this.state.addTodo} />
+                <TodoForm add={this.addTodo} />
             </div>
         );
     }
 }
-
-export default TodoBox;
