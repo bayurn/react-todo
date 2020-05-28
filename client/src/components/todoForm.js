@@ -14,6 +14,8 @@ class TodoForm extends Component {
     }
 
     handleSubmit(event) {
+        this.props.add(this.state.title);
+        this.setState({ title: '' });
         event.preventDefault();
     }
 

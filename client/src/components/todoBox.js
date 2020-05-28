@@ -7,8 +7,14 @@ class TodoBox extends Component {
         super(props);
         this.state = { data: [] };
 
-        // this.handleChange = this.handleChange.bind(this);
+        this.addTodo = this.addTodo.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    addTodo(title) {
+        this.setState((state, props) => ({
+            data: [...state.data, { title, complete: false }]
+        }))
     }
 
     render() {
@@ -16,7 +22,7 @@ class TodoBox extends Component {
             <div>
                 <h1>Daftar Kerjaan</h1>
                 <TodoList data={this.state.data} />
-                <TodoForm />
+                <TodoForm add={this.state.addTodo} />
             </div>
         );
     }
