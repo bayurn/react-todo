@@ -23,6 +23,7 @@ export default class TodoBox extends Component {
                 if (item.id === id) {
                     item.complete = true;
                 }
+                return item;
             })
         }))
     }
