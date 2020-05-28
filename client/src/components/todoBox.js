@@ -8,7 +8,7 @@ export default class TodoBox extends Component {
         this.state = { data: [] };
 
         this.addTodo = this.addTodo.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.completeTodo = this.completeTodo.bind(this);
     }
 
     addTodo(title) {
@@ -20,7 +20,9 @@ export default class TodoBox extends Component {
     completeTodo(id) {
         this.setState((state) => ({
             data: state.data.map(item => {
-                item.id === id
+                if (item.id === id) {
+                    item.complete = true;
+                }
             })
         }))
     }
@@ -29,7 +31,7 @@ export default class TodoBox extends Component {
         return (
             <div>
                 <h1>Daftar Kerjaan</h1>
-                <TodoList data={this.state.data} />
+                <TodoList data={this.state.data} complete={this.completeTodo} />
                 <TodoForm add={this.addTodo} />
             </div>
         );
