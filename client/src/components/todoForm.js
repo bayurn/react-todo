@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../css/todoBox.css';
 
 export default class TodoForm extends Component {
     constructor(props) {
@@ -22,11 +23,9 @@ export default class TodoForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+                <label>Todo:</label>
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <input type="submit" className="Submit" value="Submit" />
             </form>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TodoList from './todoList';
 import TodoForm from './todoForm';
-import '../css/todoBox.css'
+import '../css/todoBox.css';
 
 export default class TodoBox extends Component {
     constructor(props) {
