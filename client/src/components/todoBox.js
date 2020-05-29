@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TodoList from './todoList';
 import TodoForm from './todoForm';
+import '../css/todoBox.css'
 
 export default class TodoBox extends Component {
     constructor(props) {
@@ -30,10 +31,10 @@ export default class TodoBox extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Daftar Kerjaan</h1>
-                <TodoList data={this.state.data} complete={this.completeTodo} />
-                <TodoForm add={this.addTodo} />
+            <div className="Box">
+                <h1>React Todo</h1>
+                <TodoList className="List" data={this.state.data} complete={this.completeTodo} />
+                <TodoForm className="Form" add={this.addTodo} />
             </div>
         );
     }
